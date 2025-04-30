@@ -23,6 +23,11 @@ async function getChefBirthday(id) {
 }
 
 
-getChefBirthday(1)
-    .then(compleanno => console.log("Data di nascita", compleanno))
-    .catch(error => console.log(error))
+(async () => {
+    try {
+        const compleanno = await getChefBirthday(1)
+        console.log("Data di nascita", compleanno);
+    } catch (error) {
+        console.log(error)
+    }
+})();
